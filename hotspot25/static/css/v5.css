@@ -1,0 +1,2760 @@
+@font-face {
+    font-family: PoiretOne;
+    src: url("../fonts/PoiretOne-Regular.ttf");
+}
+@font-face {
+    font-family: roboto-medium;
+    src: url("../fonts/Roboto-Medium.ttf");
+}
+@font-face {
+    font-family: roboto-regular;
+    src: url("../fonts/Roboto-Regular.ttf");
+}
+
+/* ==================== COLOR VARIABLES ==================== */
+:root {
+    --primary-color: #667eea;
+    --primary-dark: #5568d3;
+    --primary-light: #a8b5ff;
+    --secondary-color: #764ba2;
+    --accent-color: #f093fb;
+    --success-color: #4ade80;
+    --success-dark: #22c55e;
+    --info-color: #38bdf8;
+    --warning-color: #fbbf24;
+    --danger-color: #f87171;
+    --text-primary: #1f2937;
+    --text-secondary: #6b7280;
+    --text-light: #9ca3af;
+    --bg-primary: #ffffff;
+    --bg-secondary: #f9fafb;
+    --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --border-color: #e5e7eb;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* ==================== BASE STYLES ==================== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: roboto-regular, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+button, h6, h5, .card-body {
+    font-family: roboto-regular !important;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.05em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: var(--text-secondary);
+}
+
+/* .container {
+    width: 100% !important;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 20px;
+} */
+
+/* ==================== NAVBAR ==================== */
+.navbar {
+    padding: 0;
+    background: var(--bg-primary);
+    border: none; 
+    border-radius: 0;
+ 
+    box-shadow: var(--shadow-sm);
+    border-bottom: 3px solid var(--primary-color) !important;
+}
+
+.navbar-brand {
+    font-weight: 700 !important;
+    letter-spacing: 0.5px;
+    color: var(--text-primary) !important;
+    padding: 15px 20px !important;
+    background: var(--bg-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.navbar-inverse .navbar-nav > li > a,
+.navbar-inverse .navbar-nav > li > a:hover {
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover {
+    color: var(--primary-color);
+}
+
+/* ==================== PANELS & CARDS ==================== */
+.panel {
+    background: var(--bg-primary);
+    border-radius: 16px;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color) !important;
+    overflow: hidden;
+    margin-bottom: 0px !important;
+}
+
+.panel-default {
+    /* padding: 30px; */
+}
+
+.panel-success {
+    border: none;
+}
+
+.panel-heading {
+    background: var(--bg-gradient) !important;
+    color: #fff !important;
+    padding: 20px 24px;
+    font-size: 1.2em;
+    font-weight: 600;
+    border-radius: 0 !important;
+}
+
+.panel-body {
+    background: var(--bg-primary) !important;
+    padding: 28px;
+}
+
+/* ==================== FORM ELEMENTS - COLORFUL & MOBILE FRIENDLY ==================== */
+
+.form-group {
+    position: relative;
+    margin-bottom: 28px;
+}
+
+.form-control {
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    padding: 18px 18px 10px 18px;
+    font-size: 1.05em;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: var(--bg-primary);
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    min-height: 56px; /* Better touch target for mobile */
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    background: var(--bg-primary);
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1),
+                0 4px 12px rgba(102, 126, 234, 0.15);
+    transform: translateY(-1px);
+}
+
+/* Floating label styles */
+label {
+    font-weight: 600;
+    color: var(--text-light);
+    margin-bottom: 8px;
+    display: block;
+    font-size: 0.9em;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-control:focus + label,
+.form-control:not(:placeholder-shown) + label {
+    color: var(--primary-color);
+    font-size: 0.75em;
+}
+
+/* Input with icon support */
+.input-with-icon {
+    position: relative;
+}
+
+.input-with-icon .form-control {
+    padding-left: 50px;
+}
+
+.input-with-icon .input-icon {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-light);
+    transition: color 0.3s ease;
+    z-index: 2;
+}
+
+.input-with-icon .form-control:focus ~ .input-icon {
+    color: var(--primary-color);
+}
+
+/* Placeholder styling */
+.form-control::placeholder {
+    color: var(--text-light);
+    opacity: 0.7;
+}
+
+/* Success state */
+.form-control.is-valid {
+    border-color: var(--success-color);
+    background: #f0fdf4;
+}
+
+.form-control.is-valid:focus {
+    box-shadow: 0 0 0 4px rgba(74, 222, 128, 0.1),
+                0 4px 12px rgba(74, 222, 128, 0.15);
+}
+
+/* Error state */
+.form-control.is-invalid {
+    border-color: var(--danger-color);
+    background: #fff5f5;
+}
+
+.form-control.is-invalid:focus {
+    box-shadow: 0 0 0 4px rgba(248, 113, 113, 0.1),
+                0 4px 12px rgba(248, 113, 113, 0.15);
+}
+
+/* Disabled state */
+.form-control:disabled {
+    background: #f9fafb;
+    color: var(--text-light);
+    cursor: not-allowed;
+    border-color: var(--border-color);
+}
+
+/* ==================== BUTTONS - COLORFUL & MOBILE FRIENDLY ==================== */
+.btn {
+    border-radius: 12px;
+    padding: 16px 28px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    border: none;
+    min-height: 52px; /* Better touch target */
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.btn-info {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.btn-info:hover {
+    background: linear-gradient(135deg, #5568d3 0%, #653a8a 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.btn-success {
+    background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+    color: #fff !important;
+    box-shadow: 0 4px 12px rgba(74, 222, 128, 0.3);
+}
+
+.btn-success:hover {
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(74, 222, 128, 0.4);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #38bdf8 0%, #0ea5e9 100%);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(56, 189, 248, 0.4);
+}
+
+.btn-outline {
+    border: 2px solid var(--primary-color);
+    background: transparent;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.btn-outline:hover {
+    background: var(--primary-color);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.btn-block {
+    margin: 12px 0;
+    width: 100%;
+}
+
+/* ==================== PACKAGE ROWS ==================== */
+.rowp {
+    margin: 10px 0;
+    padding: 20px;
+    border: 2px solid var(--border-color);
+    background: var(--bg-primary);
+    border-radius: 16px;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+}
+
+.rowp:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-light);
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.03) 0%, rgba(118, 75, 162, 0.03) 100%);
+}
+
+/* ==================== CIRCLE BUTTONS ==================== */
+.btn-circle {
+    width: 70px;
+    height: 70px;
+    line-height: 24px;
+    text-align: center;
+    padding: 0;
+    border-radius: 50%;
+    background: var(--bg-gradient);
+    color: #fff;
+    border: none;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.btn-circle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.btn-circle h5 {
+    margin: 0;
+    font-size: 1.1em;
+    font-weight: 700;
+}
+
+.btn-circle-lg {
+    width: 80px;
+    height: 80px;
+}
+
+.button2 {
+    border: 2px solid var(--primary-color);
+    background: var(--bg-primary);
+    color: var(--primary-color);
+}
+
+.button2:hover {
+    background: var(--bg-gradient);
+    color: #fff;
+}
+
+/* ==================== TEXT STYLES ==================== */
+h6 {
+    font-size: 1.05em;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 5px 0;
+}
+
+h6.text {
+    color: var(--text-primary) !important;
+    font-size: 1.15em;
+}
+
+.device {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 0.95em;
+}
+
+/* ==================== ALERTS ==================== */
+.alert {
+    border-radius: 12px;
+    padding: 18px 22px;
+    border: 2px solid;
+    margin: 18px 0;
+}
+
+.alert-info {
+    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+    color: #1e40af;
+    border-color: #93c5fd;
+}
+
+.bg-danger {
+    background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%) !important;
+    color: #dc2626 !important;
+    border-color: #fca5a5 !important;
+}
+
+/* ==================== MODAL ==================== */
+.modal-content {
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.modal-header {
+    background: var(--bg-gradient) !important;
+    color: #fff !important;
+    border-bottom: none;
+    padding: 24px 28px;
+}
+
+.modal-body {
+    padding: 32px;
+}
+
+.modal-footer {
+    border-top: 1px solid var(--border-color);
+    padding: 20px;
+}
+
+/* ==================== UTILITIES ==================== */
+.green {
+    background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+    color: #fff;
+}
+
+.green-font {
+    color: var(--success-color);
+}
+
+.separ {
+    border-bottom: 2px solid var(--border-color); 
+    margin: 24px 0; 
+    width: 100%;
+    background: linear-gradient(90deg, transparent 0%, var(--primary-light) 50%, transparent 100%);
+    height: 2px;
+    border: none;
+}
+
+/* ==================== SCROLLBAR ==================== */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #5568d3 0%, #653a8a 100%);
+}
+
+/* ==================== MOBILE RESPONSIVE - ENHANCED ==================== */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+    
+    .container {
+        padding: 16px;
+    }
+    
+    .panel-default {
+        padding: 20px;
+        border-radius: 12px;
+    }
+    
+    .panel-heading {
+        padding: 16px 20px;
+        font-size: 1.1em;
+    }
+    
+    .panel-body {
+        padding: 20px;
+    }
+    
+    /* Larger touch targets for mobile */
+    .btn {
+        padding: 18px 24px;
+        min-height: 56px;
+        font-size: 1.05em;
+    }
+    
+    .form-control {
+        padding: 20px 16px 12px 16px;
+        min-height: 60px;
+        font-size: 16px; /* Prevents zoom on iOS */
+        border-radius: 12px;
+    }
+    
+    .input-with-icon .form-control {
+        padding-left: 52px;
+    }
+    
+    .btn-circle {
+        width: 60px;
+        height: 60px;
+        min-width: 60px;
+        min-height: 60px;
+    }
+    
+    .btn-circle-lg {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .rowp {
+        padding: 16px;
+        border-radius: 12px;
+    }
+    
+    /* Stack columns on mobile */
+    .rowp .col-xs-3,
+    .rowp .col-xs-5,
+    .rowp .col-xs-4 {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 12px;
+        padding: 0 8px;
+    }
+    
+    .rowp .col-xs-4 {
+        margin-bottom: 0;
+    }
+}
+
+/* ==================== EXTRA SMALL DEVICES (< 370px) ==================== */
+@media (max-width: 370px) {
+    body {
+        font-size: 15px;
+    }
+    
+    .container {
+        padding: 12px;
+        max-width: 100%;
+    }
+    
+    /* Navbar adjustments */
+    .navbar-brand {
+        font-size: 0.95em;
+        padding: 14px 16px !important;
+    }
+/*     
+    .navbar {
+        margin-bottom: 16px;
+    }
+     */
+    /* Panel adjustments */
+    .panel-default {
+        padding: 16px;
+        border-radius: 10px;
+    }
+    
+    .panel-heading {
+        padding: 14px 16px;
+        font-size: 1em;
+    }
+    
+    .panel-body {
+        padding: 16px;
+    }
+    
+    /* Form elements */
+    .form-control {
+        padding: 18px 14px 10px 14px;
+        font-size: 16px; /* Never go below 16px on iOS */
+        border-radius: 10px;
+        min-height: 56px;
+    }
+    
+    label {
+        font-size: 0.85em;
+        margin-bottom: 6px;
+    }
+    
+    .form-group {
+        margin-bottom: 20px;
+    }
+    
+    /* Button adjustments */
+    .btn {
+        padding: 16px 20px;
+        font-size: 1em;
+        min-height: 52px;
+        border-radius: 10px;
+    }
+    
+    .btn-block {
+        margin: 10px 0;
+    }
+    
+    /* Package rows */
+    .rowp {
+        padding: 14px;
+        margin: 8px 0;
+        border-radius: 10px;
+    }
+    
+    /* Circle buttons - ensure minimum touch size */
+    .btn-circle {
+        width: 56px;
+        height: 56px;
+        min-width: 56px;
+        min-height: 56px;
+    }
+    
+    .btn-circle-lg {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .btn-circle h5 {
+        font-size: 1em;
+    }
+    
+    /* Text adjustments */
+    h6 {
+        font-size: 0.95em;
+    }
+    
+    h6.text {
+        font-size: 1.05em;
+    }
+    
+    .device {
+        font-size: 0.9em;
+    }
+    
+    p {
+        font-size: 1em;
+    }
+    
+    /* Modal adjustments */
+    .modal-dialog {
+        margin: 8px;
+    }
+    
+    .modal-content {
+        border-radius: 12px;
+    }
+    
+    .modal-header {
+        padding: 16px 18px;
+    }
+    
+    .modal-body {
+        padding: 20px 16px;
+    }
+    
+    .modal-footer {
+        padding: 16px;
+    }
+    
+    .modal-title {
+        font-size: 1.1em;
+    }
+    
+    /* Alert adjustments */
+    .alert {
+        padding: 14px 16px;
+        font-size: 0.95em;
+        border-radius: 10px;
+    }
+    
+    /* Input with icon on very small screens */
+    .input-with-icon .form-control {
+        padding-left: 48px;
+    }
+    
+    .input-with-icon .input-icon {
+        left: 14px;
+    }
+    
+    /* Reduce animations for performance */
+    .form-control:focus {
+        transform: none;
+    }
+    
+    .btn:hover {
+        transform: translateY(-1px);
+    }
+    
+    .rowp:hover {
+        transform: translateY(-2px);
+    }
+    
+    /* Scrollbar for small screens */
+    ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+    }
+}
+
+/* ==================== LANDSCAPE MODE ON SMALL DEVICES ==================== */
+@media (max-height: 500px) and (orientation: landscape) {
+    .panel-default {
+        padding: 16px;
+    }
+    
+    .panel-heading {
+        padding: 12px 16px;
+    }
+    
+    .form-group {
+        margin-bottom: 16px;
+    }
+    
+    .btn {
+        padding: 12px 20px;
+        min-height: 44px;
+    }
+}
+
+/* ==================== ANIMATIONS ==================== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.panel {
+    animation: fadeIn 0.5s ease-out;
+}
+
+.form-group {
+    animation: slideIn 0.4s ease-out;
+}
+
+/* ==================== ADDITIONAL ENHANCEMENTS ==================== */
+.buy_button {
+    position: relative;
+    overflow: hidden;
+}
+
+.buy_button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.buy_button:hover::before {
+    width: 350px;
+    height: 350px;
+}
+
+/* Card hover effects */
+.card-img-top {
+    height: 15rem;
+    transition: transform 0.4s ease;
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+/* Focus visible for accessibility */
+*:focus-visible {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 3px;
+}
+
+/* ==================== LOADING STATES ==================== */
+.btn.loading {
+    position: relative;
+    color: transparent;
+}
+
+.btn.loading::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    margin-left: -10px;
+    margin-top: -10px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ==================== ACCESSIBILITY IMPROVEMENTS ==================== */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .btn {
+        border: 2px solid currentColor;
+    }
+    
+    .form-control {
+        border-width: 3px;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+
+
+
+/* ==================== ADDITIONAL POLISH & MOBILE FIXES ==================== */
+
+/* Fix for error message on mobile - ensure it's readable */
+.bg-danger,
+.alert-danger {
+    background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%) !important;
+    color: #dc2626 !important;
+    border: 2px solid #fca5a5 !important;
+    border-radius: 12px;
+    padding: 16px 20px;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Make sure package rows are properly spaced on mobile */
+@media (max-width: 768px) {
+    .rowp {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 12px;
+    }
+    
+    .rowp > div {
+        width: 100% !important;
+    }
+    
+    /* Center the circle badges on mobile */
+    .btn-circle {
+        margin: 0 auto;
+    }
+    
+    /* Make "Click & Buy" buttons full width on mobile */
+    .rowp .btn-outline {
+        width: 100%;
+        max-width: 200px;
+        margin: 0 auto;
+    }
+}
+
+/* Improve form section spacing */
+.panel-body .form-group:last-child {
+    margin-bottom: 16px;
+}
+
+/* Add slight animation to package cards on load */
+.rowp {
+    animation: slideUp 0.4s ease-out forwards;
+    opacity: 0;
+}
+
+.rowp:nth-child(1) { animation-delay: 0.1s; }
+.rowp:nth-child(2) { animation-delay: 0.2s; }
+.rowp:nth-child(3) { animation-delay: 0.3s; }
+.rowp:nth-child(4) { animation-delay: 0.4s; }
+.rowp:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Improve button focus states for keyboard navigation */
+.btn:focus,
+.btn-outline:focus {
+    outline: 3px solid rgba(102, 126, 234, 0.5);
+    outline-offset: 3px;
+}
+
+/* Make the header title more prominent */
+.panel-heading {
+    font-size: 1.3em;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Improve input placeholder visibility */
+.form-control::placeholder {
+    color: #9ca3af;
+    font-style: italic;
+}
+
+/* Add a subtle pulse animation to the call button */
+.btn-success {
+    animation: gentlePulse 3s ease-in-out infinite;
+}
+
+@keyframes gentlePulse {
+    0%, 100% {
+        box-shadow: 0 4px 12px rgba(74, 222, 128, 0.3);
+    }
+    50% {
+        box-shadow: 0 4px 20px rgba(74, 222, 128, 0.5);
+    }
+}
+
+/* Improve package title styling */
+.rowp h6 {
+    font-weight: 700;
+    font-size: 1.1em;
+    color: #1f2937;
+    margin-bottom: 4px;
+}
+
+/* Style the device count text */
+.rowp .device {
+    color: #6b7280;
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+/* Add hover effect to price circles */
+.btn-circle {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.rowp:hover .btn-circle {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+/* Improve label styling above inputs */
+label {
+    font-weight: 600;
+    color: #4b5563;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    font-size: 0.85em;
+}
+
+/* Add loading state for buttons */
+.btn.loading {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+/* Ensure proper spacing between sections */
+.panel + .panel {
+    margin-top: 24px;
+}
+
+/* Mobile: Stack everything nicely */
+@media (max-width: 576px) {
+    /* Make header text smaller on very small screens */
+    .panel-heading {
+        font-size: 1.1em;
+        padding: 16px 20px;
+    }
+    
+    /* Adjust price circles */
+    .btn-circle {
+        width: 64px;
+        height: 64px;
+    }
+    
+    .btn-circle h5 {
+        font-size: 1em;
+    }
+    
+    /* Full width buttons */
+    .btn-block,
+    .btn-outline {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    /* Reduce gaps in package rows */
+    .rowp {
+        gap: 10px;
+        padding: 16px 12px;
+    }
+}
+
+/* Dark mode support (optional) */
+@media (prefers-color-scheme: dark) {
+    /* Only uncomment if you want dark mode
+    body {
+        background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+    }
+    
+    .panel,
+    .panel-body,
+    .rowp {
+        background: #1f2937;
+        border-color: #374151;
+    }
+    
+    h6, .text {
+        color: #f9fafb;
+    }
+    
+    .device {
+        color: #9ca3af;
+    }
+    */
+}
+
+/* Print styles */
+@media print {
+    .btn,
+    .panel-heading {
+        background: white !important;
+        color: black !important;
+        border: 1px solid black !important;
+    }
+    
+    .rowp {
+        page-break-inside: avoid;
+    }
+}
+
+/* ==================== ACCESSIBILITY ENHANCEMENTS ==================== */
+
+/* Better focus indicators */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 3px solid #667eea;
+    outline-offset: 2px;
+}
+
+/* Screen reader only class */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Skip to content link for keyboard users */
+.skip-to-content {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #667eea;
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    z-index: 100;
+}
+
+.skip-to-content:focus {
+    top: 0;
+}
+
+/* ==================== PERFORMANCE OPTIMIZATIONS ==================== */
+
+/* Use GPU acceleration for animations */
+.btn,
+.form-control,
+.rowp,
+.btn-circle {
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+/* Reduce animations on slow devices */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .gentlePulse {
+        animation: none !important;
+    }
+}
+
+@font-face {
+    font-family: PoiretOne;
+    src: url("../fonts/PoiretOne-Regular.ttf");
+}
+@font-face {
+    font-family: roboto-medium;
+    src: url("../fonts/Roboto-Medium.ttf");
+}
+@font-face {
+    font-family: roboto-regular;
+    src: url("../fonts/Roboto-Regular.ttf");
+}
+
+/* ==================== COLOR VARIABLES ==================== */
+:root {
+    --primary-color: #667eea;
+    --primary-dark: #5568d3;
+    --primary-light: #a8b5ff;
+    --secondary-color: #764ba2;
+    --accent-color: #f093fb;
+    --success-color: #4ade80;
+    --success-dark: #22c55e;
+    --info-color: #38bdf8;
+    --warning-color: #fbbf24;
+    --danger-color: #f87171;
+    --text-primary: #1f2937;
+    --text-secondary: #6b7280;
+    --text-light: #9ca3af;
+    --bg-primary: #ffffff;
+    --bg-secondary: #f9fafb;
+    --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --border-color: #e5e7eb;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* ==================== BASE STYLES ==================== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: roboto-regular, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+button, h6, h5, .card-body {
+    font-family: roboto-regular !important;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.05em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: var(--text-secondary);
+}
+
+.container {
+    width: 100% !important;
+    margin: 0 auto;
+    /* max-width: 800px; */
+    padding: 20px;
+}
+
+/* ==================== NAVBAR ==================== */
+.navbar {
+    padding: 0;
+    background: var(--bg-primary);
+    border: none; 
+    border-radius: 0;
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
+
+    box-shadow: var(--shadow-sm);
+    border-bottom: 3px solid var(--primary-color) !important;
+}
+
+.navbar-brand {
+    font-weight: 700 !important;
+    letter-spacing: 0.5px;
+    color: var(--text-primary) !important;
+    padding: 15px 20px !important;
+    background: var(--bg-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.navbar-inverse .navbar-nav > li > a,
+.navbar-inverse .navbar-nav > li > a:hover {
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover {
+    color: var(--primary-color);
+}
+
+/* ==================== PANELS & CARDS ==================== */
+.panel {
+    background: var(--bg-primary);
+    border-radius: 16px;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color) !important;
+    overflow: hidden;
+    margin-bottom: 0px !important;
+}
+
+.panel-default {
+    padding: 30px;
+}
+
+.panel-success {
+    border: none;
+}
+
+.panel-heading {
+    background: var(--bg-gradient) !important;
+    color: #fff !important;
+    padding: 20px 24px;
+    font-size: 1.2em;
+    font-weight: 600;
+    border-radius: 0 !important;
+}
+
+.panel-body {
+    background: var(--bg-primary) !important;
+    padding: 28px;
+}
+
+/* ==================== FORM ELEMENTS - COLORFUL & MOBILE FRIENDLY ==================== */
+
+.form-group {
+    position: relative;
+    margin-bottom: 28px;
+}
+
+.form-control {
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    padding: 18px 18px 10px 18px;
+    font-size: 1.05em;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: var(--bg-primary);
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    min-height: 56px; /* Better touch target for mobile */
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    background: var(--bg-primary);
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1),
+                0 4px 12px rgba(102, 126, 234, 0.15);
+    transform: translateY(-1px);
+}
+
+/* Floating label styles */
+label {
+    font-weight: 600;
+    color: var(--text-light);
+    margin-bottom: 8px;
+    display: block;
+    font-size: 0.9em;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-control:focus + label,
+.form-control:not(:placeholder-shown) + label {
+    color: var(--primary-color);
+    font-size: 0.75em;
+}
+
+/* Input with icon support */
+.input-with-icon {
+    position: relative;
+}
+
+.input-with-icon .form-control {
+    padding-left: 50px;
+}
+
+.input-with-icon .input-icon {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-light);
+    transition: color 0.3s ease;
+    z-index: 2;
+}
+
+.input-with-icon .form-control:focus ~ .input-icon {
+    color: var(--primary-color);
+}
+
+/* Placeholder styling */
+.form-control::placeholder {
+    color: var(--text-light);
+    opacity: 0.7;
+}
+
+/* Success state */
+.form-control.is-valid {
+    border-color: var(--success-color);
+    background: #f0fdf4;
+}
+
+.form-control.is-valid:focus {
+    box-shadow: 0 0 0 4px rgba(74, 222, 128, 0.1),
+                0 4px 12px rgba(74, 222, 128, 0.15);
+}
+
+/* Error state */
+.form-control.is-invalid {
+    border-color: var(--danger-color);
+    background: #fff5f5;
+}
+
+.form-control.is-invalid:focus {
+    box-shadow: 0 0 0 4px rgba(248, 113, 113, 0.1),
+                0 4px 12px rgba(248, 113, 113, 0.15);
+}
+
+/* Disabled state */
+.form-control:disabled {
+    background: #f9fafb;
+    color: var(--text-light);
+    cursor: not-allowed;
+    border-color: var(--border-color);
+}
+
+/* ==================== BUTTONS - COLORFUL & MOBILE FRIENDLY ==================== */
+.btn {
+    border-radius: 12px;
+    padding: 16px 28px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    border: none;
+    min-height: 52px; /* Better touch target */
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.btn-info {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.btn-info:hover {
+    background: linear-gradient(135deg, #5568d3 0%, #653a8a 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.btn-success {
+    background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+    color: #fff !important;
+    box-shadow: 0 4px 12px rgba(74, 222, 128, 0.3);
+}
+
+.btn-success:hover {
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(74, 222, 128, 0.4);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #38bdf8 0%, #0ea5e9 100%);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(56, 189, 248, 0.4);
+}
+
+.btn-outline {
+    border: 2px solid var(--primary-color);
+    background: transparent;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.btn-outline:hover {
+    background: var(--primary-color);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.btn-block {
+    margin: 12px 0;
+    width: 100%;
+}
+
+/* ==================== PACKAGE ROWS ==================== */
+.rowp {
+    margin: 10px 0;
+    padding: 20px;
+    border: 2px solid var(--border-color);
+    background: var(--bg-primary);
+    border-radius: 16px;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+}
+
+.rowp:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-light);
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.03) 0%, rgba(118, 75, 162, 0.03) 100%);
+}
+
+/* ==================== CIRCLE BUTTONS ==================== */
+.btn-circle {
+    width: 70px;
+    height: 70px;
+    line-height: 24px;
+    text-align: center;
+    padding: 0;
+    border-radius: 50%;
+    background: var(--bg-gradient);
+    color: #fff;
+    border: none;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.btn-circle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.btn-circle h5 {
+    margin: 0;
+    font-size: 1.1em;
+    font-weight: 700;
+}
+
+.btn-circle-lg {
+    width: 80px;
+    height: 80px;
+}
+
+.button2 {
+    border: 2px solid var(--primary-color);
+    background: var(--bg-primary);
+    color: var(--primary-color);
+}
+
+.button2:hover {
+    background: var(--bg-gradient);
+    color: #fff;
+}
+
+/* ==================== TEXT STYLES ==================== */
+h6 {
+    font-size: 1.05em;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 5px 0;
+}
+
+h6.text {
+    color: var(--text-primary) !important;
+    font-size: 1.15em;
+}
+
+.device {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 0.95em;
+}
+
+/* ==================== ALERTS ==================== */
+.alert {
+    border-radius: 12px;
+    padding: 18px 22px;
+    border: 2px solid;
+    margin: 18px 0;
+}
+
+.alert-info {
+    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+    color: #1e40af;
+    border-color: #93c5fd;
+}
+
+.bg-danger {
+    background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%) !important;
+    color: #dc2626 !important;
+    border-color: #fca5a5 !important;
+}
+
+/* ==================== MODAL ==================== */
+.modal-content {
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.modal-header {
+    background: var(--bg-gradient) !important;
+    color: #fff !important;
+    border-bottom: none;
+    padding: 24px 28px;
+}
+
+.modal-body {
+    padding: 32px;
+}
+
+.modal-footer {
+    border-top: 1px solid var(--border-color);
+    padding: 20px;
+}
+
+/* ==================== UTILITIES ==================== */
+.green {
+    background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+    color: #fff;
+}
+
+.green-font {
+    color: var(--success-color);
+}
+
+.separ {
+    border-bottom: 2px solid var(--border-color); 
+    margin: 24px 0; 
+    width: 100%;
+    background: linear-gradient(90deg, transparent 0%, var(--primary-light) 50%, transparent 100%);
+    height: 2px;
+    border: none;
+}
+
+/* ==================== SCROLLBAR ==================== */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #5568d3 0%, #653a8a 100%);
+}
+
+/* ==================== MOBILE RESPONSIVE - ENHANCED ==================== */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+    
+    .container {
+        padding: 16px;
+    }
+    
+    .panel-default {
+        padding: 20px;
+        border-radius: 12px;
+    }
+    
+    .panel-heading {
+        padding: 16px 20px;
+        font-size: 1.1em;
+    }
+    
+    .panel-body {
+        padding: 20px;
+    }
+    
+    /* Larger touch targets for mobile */
+    .btn {
+        padding: 18px 24px;
+        min-height: 56px;
+        font-size: 1.05em;
+    }
+    
+    .form-control {
+        padding: 20px 16px 12px 16px;
+        min-height: 60px;
+        font-size: 16px; /* Prevents zoom on iOS */
+        border-radius: 12px;
+    }
+    
+    .input-with-icon .form-control {
+        padding-left: 52px;
+    }
+    
+    .btn-circle {
+        width: 60px;
+        height: 60px;
+        min-width: 60px;
+        min-height: 60px;
+    }
+    
+    .btn-circle-lg {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .rowp {
+        padding: 16px;
+        border-radius: 12px;
+    }
+    
+    /* Stack columns on mobile */
+    .rowp .col-xs-3,
+    .rowp .col-xs-5,
+    .rowp .col-xs-4 {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 12px;
+        padding: 0 8px;
+    }
+    
+    .rowp .col-xs-4 {
+        margin-bottom: 0;
+    }
+}
+
+/* ==================== EXTRA SMALL DEVICES (< 370px) ==================== */
+@media (max-width: 370px) {
+    body {
+        font-size: 15px;
+    }
+    
+    .container {
+        padding: 12px;
+        max-width: 100%;
+    }
+    
+    /* Navbar adjustments */
+    .navbar-brand {
+        font-size: 0.95em;
+        padding: 14px 16px !important;
+    }
+    
+    .navbar {
+        margin-bottom: 16px;
+    }
+    
+    /* Panel adjustments */
+    .panel-default {
+        padding: 16px;
+        border-radius: 10px;
+    }
+    
+    .panel-heading {
+        padding: 14px 16px;
+        font-size: 1em;
+    }
+    
+    .panel-body {
+        padding: 16px;
+    }
+    
+    /* Form elements */
+    .form-control {
+        padding: 18px 14px 10px 14px;
+        font-size: 16px; /* Never go below 16px on iOS */
+        border-radius: 10px;
+        min-height: 56px;
+    }
+    
+    label {
+        font-size: 0.85em;
+        margin-bottom: 6px;
+    }
+    
+    .form-group {
+        margin-bottom: 20px;
+    }
+    
+    /* Button adjustments */
+    .btn {
+        padding: 16px 20px;
+        font-size: 1em;
+        min-height: 52px;
+        border-radius: 10px;
+    }
+    
+    .btn-block {
+        margin: 10px 0;
+    }
+    
+    /* Package rows */
+    .rowp {
+        padding: 14px;
+        margin: 8px 0;
+        border-radius: 10px;
+    }
+    
+    /* Circle buttons - ensure minimum touch size */
+    .btn-circle {
+        width: 56px;
+        height: 56px;
+        min-width: 56px;
+        min-height: 56px;
+    }
+    
+    .btn-circle-lg {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .btn-circle h5 {
+        font-size: 1em;
+    }
+    
+    /* Text adjustments */
+    h6 {
+        font-size: 0.95em;
+    }
+    
+    h6.text {
+        font-size: 1.05em;
+    }
+    
+    .device {
+        font-size: 0.9em;
+    }
+    
+    p {
+        font-size: 1em;
+    }
+    
+    /* Modal adjustments */
+    .modal-dialog {
+        margin: 8px;
+    }
+    
+    .modal-content {
+        border-radius: 12px;
+    }
+    
+    .modal-header {
+        padding: 16px 18px;
+    }
+    
+    .modal-body {
+        padding: 20px 16px;
+    }
+    
+    .modal-footer {
+        padding: 16px;
+    }
+    
+    .modal-title {
+        font-size: 1.1em;
+    }
+    
+    /* Alert adjustments */
+    .alert {
+        padding: 14px 16px;
+        font-size: 0.95em;
+        border-radius: 10px;
+    }
+    
+    /* Input with icon on very small screens */
+    .input-with-icon .form-control {
+        padding-left: 48px;
+    }
+    
+    .input-with-icon .input-icon {
+        left: 14px;
+    }
+    
+    /* Reduce animations for performance */
+    .form-control:focus {
+        transform: none;
+    }
+    
+    .btn:hover {
+        transform: translateY(-1px);
+    }
+    
+    .rowp:hover {
+        transform: translateY(-2px);
+    }
+    
+    /* Scrollbar for small screens */
+    ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+    }
+}
+
+/* ==================== LANDSCAPE MODE ON SMALL DEVICES ==================== */
+@media (max-height: 500px) and (orientation: landscape) {
+    .panel-default {
+        padding: 16px;
+    }
+    
+    .panel-heading {
+        padding: 12px 16px;
+    }
+    
+    .form-group {
+        margin-bottom: 16px;
+    }
+    
+    .btn {
+        padding: 12px 20px;
+        min-height: 44px;
+    }
+}
+
+/* ==================== ANIMATIONS ==================== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.panel {
+    animation: fadeIn 0.5s ease-out;
+}
+
+.form-group {
+    animation: slideIn 0.4s ease-out;
+}
+
+/* ==================== ADDITIONAL ENHANCEMENTS ==================== */
+.buy_button {
+    position: relative;
+    overflow: hidden;
+}
+
+.buy_button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.buy_button:hover::before {
+    width: 350px;
+    height: 350px;
+}
+
+/* Card hover effects */
+.card-img-top {
+    height: 15rem;
+    transition: transform 0.4s ease;
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+/* Focus visible for accessibility */
+*:focus-visible {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 3px;
+}
+
+/* ==================== LOADING STATES ==================== */
+.btn.loading {
+    position: relative;
+    color: transparent;
+}
+
+.btn.loading::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    margin-left: -10px;
+    margin-top: -10px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ==================== ACCESSIBILITY IMPROVEMENTS ==================== */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .btn {
+        border: 2px solid currentColor;
+    }
+    
+    .form-control {
+        border-width: 3px;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+
+
+
+/* ==================== ADDITIONAL POLISH & MOBILE FIXES ==================== */
+
+/* Fix for error message on mobile - ensure it's readable */
+.bg-danger,
+.alert-danger {
+    background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%) !important;
+    color: #dc2626 !important;
+    border: 2px solid #fca5a5 !important;
+    border-radius: 12px;
+    padding: 16px 20px;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Make sure package rows are properly spaced on mobile */
+@media (max-width: 768px) {
+    .rowp {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 12px;
+    }
+    
+    .rowp > div {
+        width: 100% !important;
+    }
+    
+    /* Center the circle badges on mobile */
+    .btn-circle {
+        margin: 0 auto;
+    }
+    
+    /* Make "Click & Buy" buttons full width on mobile */
+    .rowp .btn-outline {
+        width: 100%;
+        max-width: 200px;
+        margin: 0 auto;
+    }
+}
+
+/* Improve form section spacing */
+.panel-body .form-group:last-child {
+    margin-bottom: 16px;
+}
+
+/* Add slight animation to package cards on load */
+.rowp {
+    animation: slideUp 0.4s ease-out forwards;
+    opacity: 0;
+}
+
+.rowp:nth-child(1) { animation-delay: 0.1s; }
+.rowp:nth-child(2) { animation-delay: 0.2s; }
+.rowp:nth-child(3) { animation-delay: 0.3s; }
+.rowp:nth-child(4) { animation-delay: 0.4s; }
+.rowp:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Improve button focus states for keyboard navigation */
+.btn:focus,
+.btn-outline:focus {
+    outline: 3px solid rgba(102, 126, 234, 0.5);
+    outline-offset: 3px;
+}
+
+/* Make the header title more prominent */
+.panel-heading {
+    font-size: 1.3em;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Improve input placeholder visibility */
+.form-control::placeholder {
+    color: #9ca3af;
+    font-style: italic;
+}
+
+/* Add a subtle pulse animation to the call button */
+.btn-success {
+    animation: gentlePulse 3s ease-in-out infinite;
+}
+
+@keyframes gentlePulse {
+    0%, 100% {
+        box-shadow: 0 4px 12px rgba(74, 222, 128, 0.3);
+    }
+    50% {
+        box-shadow: 0 4px 20px rgba(74, 222, 128, 0.5);
+    }
+}
+
+/* Improve package title styling */
+.rowp h6 {
+    font-weight: 700;
+    font-size: 1.1em;
+    color: #1f2937;
+    margin-bottom: 4px;
+}
+
+/* Style the device count text */
+.rowp .device {
+    color: #6b7280;
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+/* Add hover effect to price circles */
+.btn-circle {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.rowp:hover .btn-circle {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+/* Improve label styling above inputs */
+label {
+    font-weight: 600;
+    color: #4b5563;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    font-size: 0.85em;
+}
+
+/* Add loading state for buttons */
+.btn.loading {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+/* Ensure proper spacing between sections */
+.panel + .panel {
+    margin-top: 24px;
+}
+
+/* Mobile: Stack everything nicely */
+@media (max-width: 576px) {
+    /* Make header text smaller on very small screens */
+    .panel-heading {
+        font-size: 1.1em;
+        padding: 16px 20px;
+    }
+    
+    /* Adjust price circles */
+    .btn-circle {
+        width: 64px;
+        height: 64px;
+    }
+    
+    .btn-circle h5 {
+        font-size: 1em;
+    }
+    
+    /* Full width buttons */
+    .btn-block,
+    .btn-outline {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    /* Reduce gaps in package rows */
+    .rowp {
+        gap: 10px;
+        padding: 16px 12px;
+    }
+}
+
+/* Dark mode support (optional) */
+@media (prefers-color-scheme: dark) {
+    /* Only uncomment if you want dark mode
+    body {
+        background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+    }
+    
+    .panel,
+    .panel-body,
+    .rowp {
+        background: #1f2937;
+        border-color: #374151;
+    }
+    
+    h6, .text {
+        color: #f9fafb;
+    }
+    
+    .device {
+        color: #9ca3af;
+    }
+    */
+}
+
+/* Print styles */
+@media print {
+    .btn,
+    .panel-heading {
+        background: white !important;
+        color: black !important;
+        border: 1px solid black !important;
+    }
+    
+    .rowp {
+        page-break-inside: avoid;
+    }
+}
+
+/* ==================== ACCESSIBILITY ENHANCEMENTS ==================== */
+
+/* Better focus indicators */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 3px solid #667eea;
+    outline-offset: 2px;
+}
+
+/* Screen reader only class */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Skip to content link for keyboard users */
+.skip-to-content {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #667eea;
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    z-index: 100;
+}
+
+.skip-to-content:focus {
+    top: 0;
+}
+
+/* ==================== PERFORMANCE OPTIMIZATIONS ==================== */
+
+/* Use GPU acceleration for animations */
+.btn,
+.form-control,
+.rowp,
+.btn-circle {
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+/* Reduce animations on slow devices */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .gentlePulse {
+        animation: none !important;
+    }
+}
+
+/* ==================== COMPACT LOGIN SECTION STYLING ==================== */
+
+/* Container adjustments for login section */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* min-height: calc(100vh - 80px); */
+    padding: 20px;
+}
+
+/* Login panel - compact and centered */
+.panel-default {
+    max-width: 480px !important;
+    width: 100%;
+    padding: 32px 40px !important;
+    /* margin: 0 auto 24px auto !important; */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Tighter panel body */
+.panel-body {
+    padding: 0 !important;
+}
+
+/* Compact header styling */
+.navbar-brand {
+    font-size: 1.3em !important;
+    font-weight: 700 !important;
+    text-align: center;
+    display: block;
+    padding: 18px 24px !important;
+}
+
+/* Error message - more compact and centered */
+.alert,
+.bg-danger {
+    max-width: 480px;
+    margin: 0 auto 20px auto !important;
+    padding: 14px 20px !important;
+    font-size: 0.95em;
+    text-align: center;
+    border-radius: 10px !important;
+}
+
+/* Error display text */
+.panel-default > div:first-child {
+    font-size: 0.9em;
+    color: #6b7280;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+/* Form groups - tighter spacing */
+.panel-default .form-group {
+    margin-bottom: 20px;
+}
+
+.panel-default .form-group:last-of-type {
+    margin-bottom: 24px;
+}
+
+/* Labels - more refined */
+.panel-default label {
+    font-size: 0.8em;
+    font-weight: 600;
+    color: #6b7280;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+}
+
+/* Input fields - sleeker */
+.panel-default .form-control {
+    padding: 14px 16px;
+    font-size: 1em;
+    border-radius: 10px;
+    border: 2px solid #e5e7eb;
+    transition: all 0.3s ease;
+    min-height: 48px;
+}
+
+.panel-default .form-control:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    transform: translateY(-1px);
+}
+
+/* Helper text under inputs */
+.panel-default small,
+.panel-default .form-helper {
+    font-size: 0.85em;
+    color: #9ca3af;
+    display: block;
+    margin-top: 6px;
+    text-align: left;
+}
+
+/* Buttons - refined spacing */
+.panel-default .btn {
+    margin: 8px 0;
+    font-size: 0.95em;
+    padding: 14px 24px;
+    min-height: 50px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+/* Primary action button (Connect Now) */
+.panel-default .btn-info {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.25);
+    transition: all 0.3s ease;
+}
+
+.panel-default .btn-info:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.35);
+}
+
+/* Secondary action button (Call for assistance) */
+.panel-default .btn-success {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+}
+
+.panel-default .btn-success:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.35);
+}
+
+/* Package selection panel - also compact */
+.panel-success {
+    max-width: 680px !important;
+    /* margin: 24px auto !important; */
+    padding: 0 !important;
+}
+
+.panel-success .panel-heading {
+    padding: 18px 24px !important;
+    font-size: 1.15em;
+    text-align: center;
+    border-radius: 16px 16px 0 0 !important;
+}
+
+.panel-success .panel-body {
+    padding: 24px 28px !important;
+}
+
+/* Package rows - more compact */
+.panel-success .rowp {
+    padding: 16px 20px;
+    /* margin: 10px 0; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+/* Price circles - slightly smaller */
+.panel-success .btn-circle {
+    width: 65px;
+    height: 65px;
+    flex-shrink: 0;
+}
+
+/* Package info section */
+.panel-success .rowp h6 {
+    margin: 0;
+    font-size: 1em;
+}
+
+.panel-success .rowp .device {
+    font-size: 0.85em;
+    margin-top: 2px;
+}
+
+/* Buy buttons - more compact */
+.panel-success .btn-outline {
+    padding: 10px 20px;
+    min-height: 42px;
+    font-size: 0.9em;
+    white-space: nowrap;
+}
+
+/* ==================== MOBILE OPTIMIZATIONS ==================== */
+@media (max-width: 768px) {
+    .container {
+        padding: 16px;
+        min-height: auto;
+    }
+    
+    .panel-default {
+        max-width: 100% !important;
+        padding: 24px 20px !important;
+        margin-bottom: 20px !important;
+    }
+    
+    .panel-default .form-control {
+        font-size: 16px; /* Prevent iOS zoom */
+    }
+    
+    .panel-success {
+        max-width: 100% !important;
+        /* margin: 20px auto !important; */
+    }
+    
+    .panel-success .panel-body {
+        padding: 20px 16px !important;
+    }
+    
+    /* Stack package rows on mobile */
+    .panel-success .rowp {
+        flex-direction: column;
+        text-align: center;
+        padding: 16px;
+        gap: 12px;
+    }
+    
+    .panel-success .btn-circle {
+        width: 60px;
+        height: 60px;
+        margin: 0 auto;
+    }
+    
+    .panel-success .btn-outline {
+        width: 100%;
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .panel-default {
+        padding: 20px 16px !important;
+        border-radius: 12px !important;
+    }
+    
+    .panel-default .btn {
+        padding: 14px 20px;
+        font-size: 0.9em;
+    }
+    
+    .navbar-brand {
+        font-size: 1.1em !important;
+        padding: 16px 20px !important;
+    }
+    
+    .panel-success .panel-heading {
+        font-size: 1.05em;
+        padding: 16px 20px !important;
+    }
+    
+    .panel-success .rowp {
+        padding: 14px 12px;
+    }
+    
+    .panel-success .btn-circle {
+        width: 56px;
+        height: 56px;
+    }
+}
+
+/* ==================== ENHANCED VISUAL POLISH ==================== */
+
+/* Add subtle inner shadow to inputs */
+.panel-default .form-control {
+    background: #fafbfc;
+    position: relative;
+}
+
+.panel-default .form-control:focus {
+    background: #ffffff;
+}
+
+/* Add a subtle gradient to the login card */
+.panel-default::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 50%, #667eea 100%);
+    border-radius: 8px 8px 0 0;
+}
+
+/* Smooth entrance animation for login panel */
+.panel-default {
+    animation: fadeInUp 0.5s ease-out;
+    position: relative;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Package selection panel entrance */
+.panel-success {
+    animation: fadeInUp 0.6s ease-out 0.2s both;
+}
+
+/* Add focus glow to buttons */
+.panel-default .btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.2);
+}
+
+/* Improve error message styling */
+.bg-danger {
+    background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%) !important;
+    border: 2px solid #fca5a5 !important;
+    color: #dc2626 !important;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* Add icon space for error messages (if you have icons) */
+.bg-danger::before {
+    content: '⚠️';
+    font-size: 1.1em;
+}
+
+/* Spacing between login and package sections */
+.panel-default + .panel-success {
+    margin-top: 32px !important;
+}
+
+/* ==================== LOADING STATES ==================== */
+.btn.loading {
+    position: relative;
+    color: transparent !important;
+    pointer-events: none;
+}
+
+.btn.loading::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    margin-left: -10px;
+    margin-top: -10px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ==================== TABLET LANDSCAPE ==================== */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .panel-default {
+        max-width: 520px !important;
+    }
+    
+    .panel-success {
+        max-width: 720px !important;
+    }
+}
+
+/* ==================== ACCESSIBILITY ==================== */
+/* Skip to main content */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #667eea;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 0 0 8px 0;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .panel-default,
+    .panel-success {
+        border: 3px solid currentColor !important;
+    }
+    
+    .form-control {
+        border-width: 3px !important;
+    }
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .panel-default,
+    .panel-success,
+    .btn,
+    .form-control {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* ==================== CENTERED LAYOUT ALTERNATIVE ==================== */
+/* If you want everything perfectly centered vertically on the page */
+.centered-layout .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.centered-layout .panel-default,
+.centered-layout .panel-success {
+    margin: 12px auto !important;
+}
+
+/* ==================== COMPACT VARIANT ==================== */
+/* Even more compact version for smaller forms */
+.compact-mode .panel-default {
+    max-width: 420px !important;
+    padding: 24px 32px !important;
+}
+
+.compact-mode .form-group {
+    margin-bottom: 16px !important;
+}
+
+.compact-mode .btn {
+    padding: 12px 20px !important;
+    min-height: 46px !important;
+}
+
+.compact-mode .panel-success .rowp {
+    padding: 12px 16px;
+}

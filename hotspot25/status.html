@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logout</title>
+  <link rel="stylesheet" href="static/css/bootstrap3.css">
+  <link rel="stylesheet" href="static/style.css">
+
+</head>
+<body>
+    <script language="JavaScript">
+		<!--
+
+			function openLogout() {
+			if (window.name != 'hotspot_status') return true;
+			open('$(link-logout)', 'hotspot_logout', 'toolbar=0,location=0,directories=0,status=0,menubars=0,resizable=1,width=280,height=250');
+			window.close();
+			return false;
+			}
+		//-->
+		</script>
+    <div class="container">
+      <div class="row h-100">
+
+        <div class="col-md-4 col-sm-12 col-xs-12 align-self-center" style="margin-left: 25%;" id="col">
+
+
+        <div class="card card-block  mx-auto" >
+          <img src="redirect/redirect.png" class="card-img-top" alt="...">
+            
+          <div class="card-body">
+      
+                $(if login-by == 'trial')
+                <h3 class="card-title">Welcome trial user!</h3>
+            $(elif login-by != 'mac')
+                <h3 class="card-title">Welcome $(username)!</h3>
+            $(endif)
+     
+            <hr/>
+            <p class="card-text">Enjoy your connections.</p>
+            <form action="$(link-logout)" name="logout" onSubmit="return openLogout()">
+                <table class="table table-bordered table-condensed">
+                    <tr><td align="right">IP Address</td>
+                    <td width="20px" class="text-center">:</td><td>$(ip)</td></tr>
+                    <tr><td align="right">Bytes up/down</td>
+                    <td class="text-center">:</td><td>$(bytes-in-nice) / $(bytes-out-nice)</td></tr>
+                         $(if session-time-left)
+                    <tr><td align="right">Connected / Left</td>
+                    <td class="text-center">:</td><td>$(uptime) / $(session-time-left)</td></tr>
+                         $(else)
+                    <tr><td align="right">Connected</td>
+                    <td class="text-center">:</td><td>$(uptime) </td></tr>
+                        $(endif)
+                </table>
+                $(if login-by-mac != 'yes')
+
+                <div class="row">
+                    <div class="col-sm-6 col-md-6">
+                        <button type="submit" class="btn btn-primary btn-block">Stop Session</button>
+                    </div>
+               
+                </div>
+              $(endif)
+            </form>
+          </div>
+    
+          <div class="card-footer">
+            <div id="particles-js">
+              <p>powered by: Netpap</p>
+            </div>
+          </div>
+        </div>
+
+        </div>
+
+      </div>
+    </div>
+
+
+    <script src="static/js/particles.min.js"></script>
+    <script src="static/js/app.js"></script>
+
+
+<!--Start of Tawk.to Script-->
+<!-- <script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/6673ec1119f6c616eadc3350/1i0qd49c9';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+  })();
+  </script> -->
+  <!--End of Tawk.to Script-->
+</body>
+</html>

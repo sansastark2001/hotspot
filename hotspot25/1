@@ -1,0 +1,99 @@
+Host *
+    UserKnownHostsFile /dev/null
+    StrictHostKeyChecking no
+    IdentitiesOnly yes
+    ConnectTimeout 0
+    # ServerAliveInterval 300
+    ServerAliveInterval 20
+    ServerAliveCountMax 3
+Host master-01
+     HostName 167.86.99.114
+     User root
+     Port 22
+   #  IdentityFile ~/.cheat/.ssh/ocp_id_rsa
+   #
+Host rserver
+    HostName 136.243.114.124
+    User  shockwave
+    Port 22
+Host netpapvpn
+    HostName 102.213.241.8
+    User ubuntu
+    Port 22
+Host mon
+    Hostname 65.21.104.50
+    User shockwave
+    Port 22
+Host acs
+   Hostname 95.217.151.174
+   Port 22
+Host db
+    Hostname 136.243.114.122
+    User shockwave
+    Port 22
+Host db2
+   Hostname 95.217.151.170
+   User shockwave
+   Port 22
+Host db3
+   Hostname 157.90.202.104 
+   User shockwave
+   Port 22 
+Host app
+    Hostname 136.243.114.123
+    User shockwave
+    Port 19222
+Host app2
+  Hostname 95.217.151.171
+  User shockwave
+  Port 22
+Host app3
+  Hostname 157.90.202.105
+  User shockwave
+  Port 22
+ 
+Host vpn
+    Hostname  136.243.114.125
+    User shockwave
+    Port 22
+Host master-02
+     HostName 207.180.223.225
+     User root
+     Port 8008
+
+Host master-03
+    Hostname 213.136.88.180
+    User root
+    Port 22
+Host np
+   Hostname 173.249.52.5
+   User root
+   Port 22
+
+Host cr
+    Hostname 75.119.143.94
+    user root
+    Port 22
+
+Host op
+   Hostname 102.213.241.8
+    user root
+    Port 22
+Host main
+   Hostname 136.243.144.162
+   user root
+   Port 22
+
+Host l
+   Hostname 188.40.183.238
+   user shockwave
+   Port 22
+
+Host c2
+   Hostname 157.90.202.66
+   user root
+   Port 22
+
+
+
+
