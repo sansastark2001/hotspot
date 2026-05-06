@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotspot - High Speed WiFi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo-section">
+                <div class="logo">📡</div>
+                <div>
+                    <h1>HOTSPOT WIFI</h1>
+                    <p class="tagline">High-Speed WiFi Hotspot</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Error Display -->
+            <div id="errorContainer" class="error-container"></div>
+
+            <!-- Voucher Section -->
+            <section class="voucher-section">
+                <div class="form-group">
+                    <label for="voucherCode">VOUCHER CODE</label>
+                    <input 
+                        type="text" 
+                        id="voucherCode" 
+                        placeholder="Enter your voucher code"
+                        class="input-field"
+                    >
+                    <button id="connectBtn" class="btn-connect">Connect</button>
+                </div>
+                <div id="callContainer" class="call-container"></div>
+                <div id="debugInfo" class="debug-info"></div>
+            </section>
+
+            <!-- Tabs Navigation -->
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="packages">📦 Packages</button>
+                <button class="tab-btn" data-tab="vouchers">🎫 My Vouchers</button>
+            </div>
+
+            <!-- Packages Tab -->
+            <div id="packages" class="tab-content active">
+                <!-- Back Link -->
+                <div class="back-link">
+                    <a href="#promotions">← Back to promotions and offers</a>
+                </div>
+
+                <!-- Minutes Packages -->
+                <section class="package-group">
+                    <h2>Minutes Packages</h2>
+                    <p class="group-subtitle">Short-term unlimited access plans</p>
+                    <div class="packages-grid" id="minutesPackages">
+                        <!-- Populated by JavaScript -->
+                    </div>
+                </section>
+
+                <!-- Hours Packages -->
+                <section class="package-group">
+                    <h2>Hourly Packages</h2>
+                    <p class="group-subtitle">Short-duration unlimited access plans</p>
+                    <div class="packages-grid" id="hoursPackages">
+                        <!-- Populated by JavaScript -->
+                    </div>
+                </section>
+
+                <!-- Days Packages -->
+                <section class="package-group">
+                    <h2>Daily Packages</h2>
+                    <p class="group-subtitle">Daily access plans for continuous browsing</p>
+                    <div class="packages-grid" id="daysPackages">
+                        <!-- Populated by JavaScript -->
+                    </div>
+                </section>
+
+                <!-- Months Packages -->
+                <section class="package-group">
+                    <h2>Monthly Packages</h2>
+                    <p class="group-subtitle">Monthly subscription plans</p>
+                    <div class="packages-grid" id="monthsPackages">
+                        <!-- Populated by JavaScript -->
+                    </div>
+                </section>
+
+                <!-- Years Packages -->
+                <section class="package-group">
+                    <h2>Yearly Packages</h2>
+                    <p class="group-subtitle">Annual subscription plans</p>
+                    <div class="packages-grid" id="yearsPackages">
+                        <!-- Populated by JavaScript -->
+                    </div>
+                </section>
+            </div>
+
+            <!-- Vouchers Tab -->
+            <div id="vouchers" class="tab-content">
+                <div id="vouchersContainer" class="vouchers-container">
+                    <!-- Populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Promotions Section -->
+            <section id="promotions" class="promotions-section">
+                <h2>🎉 Popular Packages</h2>
+                <div class="promotions-list" id="promotionsList">
+                    <!-- Populated by JavaScript -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
