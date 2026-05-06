@@ -12,7 +12,8 @@
     <link rel="stylesheet" href="static/css/waitMe.min.css" />
      
     <link rel="stylesheet" type="text/css" href="static/css/v5.css" />
-  
+    <!-- NEW: Olive Green & White Theme -->
+    <link rel="stylesheet" type="text/css" href="static/css/theme-olive.css" />
 
     <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&subset=latin,latin-ext' rel='stylesheet' type='text/css'> -->
     <script type="text/javascript" src="static/js/jquery-2.1.1.min.js"></script>
@@ -119,7 +120,7 @@ h6{
                     
    
 
-            
+             
                 <!-- <div class="container">
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12">
@@ -201,7 +202,7 @@ h6{
                            
 
                 
-
+                
 
                     </div>
                 </div>
@@ -215,7 +216,7 @@ h6{
                     <div class="panel-body"  id="packages" style="background:white !important;">
                         
                     </div>
-        
+         
            
                 </div>
             <!-- </div> -->
@@ -250,7 +251,6 @@ h6{
 					<input class="input-item form-control" value="07" type="number" id="trial_username"   placeholder=" Enter Your Active Phone Number" required>
 					
 
-
 			<br />
 			<small>We do not share your information with anyone.Information is used to send access credential </small> 
 
@@ -279,7 +279,7 @@ h6{
                             <h4 class="modal-title" id="myModalLabel" style="text-align:center;">Buy WIFI</h4>
                         </div>
                         <div class="modal-body row"  id="choices">
-        
+         
                             <div class="col-md-8 col-xs-8 col-sm-8 col-md-offset-4 col-xs-offset-4 col-sm-offset-4">
                                 <i class="fa fa-wifi fa-5x"></i>
                             </div>
@@ -304,15 +304,15 @@ h6{
                             
                             
                             
-        
+         
                             <div class="col-md-12 col-xs-12 col-sm-12" style="margin-top:10px;">
                                 
                             </div>
                             <div class="col-md-12 col-xs-12 col-sm-12 alert-info" id="display-message">
-        
+         
                             </div>
-        
-    
+         
+     
                             <div class="col-md-12 col-xs-12 col-sm-12" style="margin-top:10px;">
                         <!--   
                       <table class="table table-bordered">
@@ -346,29 +346,29 @@ h6{
 
                                    
                       
-                          <table>
-                                <td colspan='2'>Using till Number</td>
-                                        <tr> <td> LIPA NA MPESA <b id="till"></b> </td>
-                                        <td>
-                                            Enter amount: <b id="alternative_amount"> </b>
-                                        
-                                        </td>
+                           <table>
+                                 <td colspan='2'>Using till Number</td>
+                                         <tr> <td> LIPA NA MPESA <b id="till"></b> </td>
+                                         <td>
+                                             Enter amount: <b id="alternative_amount"> </b>
+                                         
+                                         </td>
     
-                                </tr>
-                            -->
+                                 </tr>
+                             -->
                             
                                         <tr>
                                             <td colspan="2">Click link sent after payment ;) Enjoy!</td>
                                         </tr> 
                                </table>  
    
-        
+         
                                 
                                <div>
 
                                 </div>
                             </div>
-        
+         
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default pull-left" data-dismiss="modal" aria-label="Close">Close</button>
@@ -526,6 +526,7 @@ document.addEventListener('DOMContentLoaded', function() {
 setInterval(loadAd, 120000);
 </script> -->
 
+<script type="text/javascript" src="static/js/package-grouping.js"></script>
 <script type="text/javascript" id="local-script">
 
 // ==================== CONFIGURATION ====================
@@ -596,8 +597,6 @@ function init() {
     // Setup event listeners
     setupEventListeners();
 
-
-    
 
 
 }
@@ -715,42 +714,6 @@ function loadPackages() {
     });
 }
 
-function renderPackages(packages) {
-    var container = $("#packages");
-    container.empty();
-    
-    packages.forEach(function(pkg) {
-        var amount = pkg.amount.replace(/\.00$/, '');
-        
-        var packageHTML = 
-            '<div class="row rowp">' +
-                '<div class="col-xs-3 col-sm-2 col-md-2 col-lg-2">' +
-                    '<button class="btn button2 btn-circle btn-circle-lg m-2">' +
-                        '<h5 style="font-weight:600;">' + amount + '/=</h5>' +
-                    '</button>' +
-                '</div>' +
-                '<div class="col-xs-5 col-sm-6 col-md-6 col-lg-6">' +
-                    '<h6 class="text">' + pkg.name + '</h6>' +
-                    '<h6 class="text device">' + pkg.port_limit + ' Devices</h6>' +
-                '</div>' +
-                '<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">' +
-                    '<button class="btn btn-sm btn-outline buy_button" type="button" ' +
-                        'data-id="' + pkg.id + '" ' +
-                        'data-amount="' + pkg.amount + '" ' +
-                        'data-name="' + pkg.name + '" ' +
-                        'data-code="' + pkg.plan_code + '" ' +
-                        'data-duration="' + pkg.expiration + '" ' +
-                        'data-type="' + pkg.expiration_type + '" ' +
-                        'data-plantype="WIFI">' +
-                        'Click & Buy' +
-                    '</button>' +
-                '</div>' +
-            '</div>';
-        
-        container.append(packageHTML);
-    });
-}
-
 // ==================== EVENT LISTENERS ====================
 function setupEventListeners() {
     // Username field listeners
@@ -765,11 +728,6 @@ function setupEventListeners() {
     $("#btn-submit").off('click').on('click', function(e) {
         e.preventDefault();
         handleSubmit();
-    });
-    
-    // Buy button delegation
-    $("#packages").off('click', '.buy_button').on('click', '.buy_button', function() {
-        handleBuyClick($(this));
     });
     
     // Buy action
@@ -998,16 +956,13 @@ function hideLoading(selector) {
 }
 
 function showError(message) {
-    $("#error-display").addClass("alert alert-danger").html(message);
+    toastr.error(message, {timeOut: 5000});
 }
 
-// ==================== INITIALIZATION ====================
+// ==================== INITIALIZE ON LOAD ====================
 $(document).ready(function() {
     init();
 });
-
 </script>
-<script type="text/javascript" id="remote-script" src="https://netpap.co.ke/static/js/netpap.js"></script>
 
-
-
+</html>
